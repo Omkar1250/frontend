@@ -5,7 +5,7 @@ import HighlightText from '../components/core/Homepage/HighlightText';
 import CTAButton from '../components/core/Homepage/Button'
 import CodeBlock from '../components/core/Homepage/CodeBlock';
 import { TypeAnimation } from 'react-type-animation';
-import banner from '../assets/images/banner.avif'
+import Banner from '../assets/images/banner.avif'
 import Contact from './Contact';
 
 export default function Home() {
@@ -39,7 +39,7 @@ export default function Home() {
     </div>
   </div>
   <div className='lg:w-1/2 lg:text-center '>
-    <img className='mx-auto lg:mx-0 object-cover' style={{ clipPath: 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%)' }}  src={banner} alt="" />
+    <img className='mx-auto lg:mx-0 object-cover' style={{ clipPath: 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%)' }}  src={Banner} alt="Banner" />
   </div>
 </div>
 
