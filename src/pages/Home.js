@@ -5,7 +5,7 @@ import HighlightText from '../components/core/Homepage/HighlightText';
 import CTAButton from '../components/core/Homepage/Button'
 import CodeBlock from '../components/core/Homepage/CodeBlock';
 import { TypeAnimation } from 'react-type-animation';
-import Banner from '../assets/images/banner.avif'
+import Banner from '../assets/images/banner.jpg'
 import Contact from './Contact';
 
 export default function Home() {
