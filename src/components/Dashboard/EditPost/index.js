@@ -9,9 +9,9 @@ import { getFullPostDetails } from "../../../services/operations/postAPI"
 export default function EditPost() {
   const dispatch = useDispatch()
   const { postId } = useParams()
-  console.log("POst Idddddddddddddddddddddd", postId)
+
  const {post} = useSelector((state)=> state.post)
-  console.log("POst vvvvvvvvvvvvvvvvvvv", post)  
+ 
   const [loading, setLoading] = useState(false)
   const { token } = useSelector((state) => state.auth)   
 
@@ -19,7 +19,7 @@ export default function EditPost() {
     (async () => {
       setLoading(true)
       const result = await getFullPostDetails(postId, token)
-      console.log("rrrrrrrrrrrrrrrrrrrrrrr", result)
+ 
       if (result) {
         dispatch(setEditPost(true))
         dispatch(setPost(result))
@@ -29,7 +29,7 @@ export default function EditPost() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  console.log("Poooooooooooooooooooooooo", post)
+ 
 
   if (loading) {
     return ( 

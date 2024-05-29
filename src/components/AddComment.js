@@ -21,7 +21,7 @@ export default function AddComment() {
             return;
         }
 
-        console.log("Submitting comment with data: ", data);
+     
 
         const formData = new FormData();
         formData.append("postId", postId);
@@ -30,11 +30,11 @@ export default function AddComment() {
 
         try {
             const result = await createComment(formData, token);
-            console.log("Result from createComment: ", result);
+           
             if (result) {
                 toast.success("Comment added successfully");
                 reset(); // Clear the form after successful submission
-                console.log("Form reset");
+               
             } else {
                 toast.error("Failed to add comment");
             }

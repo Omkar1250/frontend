@@ -20,10 +20,7 @@ const {
                     Authorization: `Bearer ${token}`,
                 }
             )
-            console.log(
-                "UPDATE_DISPLAY_PICTURE_API API RESPONSE............",
-                response
-              )
+           
         
               if (!response.data.success) {
                 throw new Error(response.data.message)
@@ -31,7 +28,7 @@ const {
               toast.success("Display Picture Updated Successfully")
               dispatch(setUser(response.data.data))
             } catch (error) {
-              console.log("UPDATE_DISPLAY_PICTURE_API API ERROR............", error)
+            
               toast.error("Could Not Update Display Picture")
             }
             toast.dismiss(toastId)
@@ -45,7 +42,7 @@ const {
                 const response = await apiConnector("PUT", UPDATE_PROFILE_API, formData, {
                   Authorization: `Bearer ${token}`,
                 })
-                console.log("UPDATE_PROFILE_API API RESPONSE............", response)
+              
           
                 if (!response.data.success) {
                   throw new Error(response.data.message)
@@ -58,7 +55,7 @@ const {
                 )
                 toast.success("Profile Updated Successfully")
               } catch (error) {
-                console.log("UPDATE_PROFILE_API API ERROR............", error)
+               
                 toast.error("Could Not Update Profile")
               }
               toast.dismiss(toastId)
@@ -72,7 +69,7 @@ const {
                 const response = await apiConnector("DELETE", DELETE_PROFILE_API, null, {
                   Authorization: `Bearer ${token}`,
                 })
-                console.log("DELETE_PROFILE_API API RESPONSE............", response)
+            
           
                 if (!response.data.success) {
                   throw new Error(response.data.message)
@@ -80,7 +77,7 @@ const {
                 toast.success("Profile Deleted Successfully")
                 dispatch(logout(navigate))
               } catch (error) {
-                console.log("DELETE_PROFILE_API API ERROR............", error)
+              
                 toast.error("Could Not Delete Profile")
               }
               toast.dismiss(toastId)

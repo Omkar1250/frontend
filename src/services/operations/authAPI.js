@@ -23,7 +23,7 @@ export function sendOtp(email, navigate) {
                 checkUserPresent: true,
             });
             
-            console.log('SEND OTP RESPONSE:', response);
+      
             
             if (!response.data.success) {
                 toast.error(response.data.message);
@@ -34,9 +34,9 @@ export function sendOtp(email, navigate) {
             navigate("/verify-email");
 
         } catch (error) {
-            console.log('SEND OTP API ERROR:', error);
+        
             if (error.response) {
-                console.log('Response:', error.response);
+                toast.error("Could not send otp");
             }
             toast.error("Could not send otp");
         }
@@ -70,7 +70,7 @@ export function signUp(
                 confirmPassword,
                 otp,
             });
-            console.log("SIGNUP API RESPONSE....", response);
+          
 
             if (!response.data.success) {
                 throw new Error(response.data.message);
@@ -78,7 +78,7 @@ export function signUp(
             toast.success("Signup Successfull");
             navigate("/login");
         } catch (error) {
-            console.log("signup api error....", error);
+           
             toast.error("Signup failed");
             navigate("/signup");
         }
@@ -97,7 +97,7 @@ export function login(email, password, navigate) {
           password,
         })
   
-        console.log("LOGIN API RESPONSE............", response)
+       
   
         if (!response.data.success) {
           throw new Error(response.data.message)
@@ -114,7 +114,7 @@ export function login(email, password, navigate) {
         localStorage.setItem("user", JSON.stringify(response.data.user))
         navigate("/dashboard/my-profile")
       } catch (error) {
-        console.log("LOGIN API ERROR............", error)
+       
         toast.error("Login Failed")
       }
       dispatch(setLoading(false))

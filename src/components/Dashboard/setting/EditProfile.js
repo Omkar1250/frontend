@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { updateProfile } from '../../../services/operations/settingAPI'
 import IconBtn from '../../../common/IconBtn'
+import toast from 'react-hot-toast'
 
 const genders = ["Male", "Female", "Non-Binary", "Prefer not to say", "Other"]
 
@@ -12,7 +13,7 @@ export default function EditProfile() {
     const { token } = useSelector((state) => state.auth)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    console.log("userrrrrrrrrrrrrrrrrrrrrr989",user)
+
 
     const {
         register,
@@ -24,10 +25,10 @@ export default function EditProfile() {
         try {
             dispatch(updateProfile(token, data))
         } catch (error) {
-            console.log("ERROR MESSAGE - ", error.message)
+           toast.error("Something Went Wrong")
         }
     }
-    console.log("6666666666666666666666666666666666666666",user?.additionalDetails?.dateOfBirth)
+  
 
     return (
         <>

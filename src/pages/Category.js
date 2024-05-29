@@ -132,26 +132,26 @@ export default function Category() {
         ) : (
           <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {currentPosts.map((post) => (
-              <div key={post._id} className='relative flex flex-col mt-6 text-white shadow-md bg-clip-border rounded-xl'>
-                <div className='relative h-56 mx-4 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-50 shadow-blue-25'>
+              <div key={post._id} className='flex flex-col bg-richblack-700 border-0 shadow-md rounded-lg overflow-hidden'>
+                <div className='h-56 overflow-hidden text-white shadow-md bg-clip-border rounded-xl bg-blue-50 shadow-blue-25'>
                   <img className='w-full h-full object-cover' src={post.thumbnail} alt={post.title} />
                 </div>
-                <div className='p-6'>
+                <div className='flex flex-col p-2 flex-1 text-blue-200 font-medium'>
                  <Link to={`/post/${post?._id}`}>
-                 <h5 className='block mb-2 text-l antialiased font-semibold loading-snug tracking-normal text-blue-100'>
+                 <h5 className='text-lg font-semibold text-blue-200 mb-2'>
                     {post.title}
                   </h5>
                  
                  </Link>
-                  <p className='block font-sans text-base antialiased font-light leading-relaxed text-inherit'>
+                  <p className='text-base text-richblack-25 flex-grow'>
                     {truncateText(post.body)}
                   </p>
                   <span>
-                    <p className='text-blue-100 underline text-sm'>Category: {catalogPageData.data.selectedCategory.name}</p>
-                    <p className='text-blue-100 text-sm'>Created: {formatDate(post.createdAt)}</p>
+                    <p className='text-xs text-blue-100 underline'>Category: {catalogPageData.data.selectedCategory.name}</p>
+                    <p className='text-xs text-blue-100 underline'>Created: {formatDate(post.createdAt)}</p>
                   </span>
                   <Link to={`/post/${post?._id}`}>
-                    <button className='bg-caribbeangreen-50 w-full p-1 rounded-md mt-1'>Read More</button>
+                    <button className='mt-4  mb-2 p-1 bg-caribbeangreen-100 text-white w-full rounded'>Read More</button>
                   </Link>
                 </div>
               </div>

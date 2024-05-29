@@ -14,7 +14,7 @@ export function getUserDetails(token, navigate) {
       const response = await apiConnector("GET", GET_USER_DETAILS_API, null, {
         Authorisation: `Bearer ${token}`,
       })
-      console.log("GET_USER_DETAILS API RESPONSE............", response)
+     
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -25,7 +25,7 @@ export function getUserDetails(token, navigate) {
       dispatch(setUser({ ...response.data.data, image: userImage }))
     } catch (error) {
       dispatch(logout(navigate))
-      console.log("GET_USER_DETAILS API ERROR............", error)
+      
       toast.error("Could Not Get User Details")
     }
     toast.dismiss(toastId)

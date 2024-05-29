@@ -19,7 +19,7 @@ export default function ChipInput({
 
    useState(() => {
     if(editPost){
-      console.log(post)
+     
      setChips(post?.tag)
     }
     register(name,{required: true, validate: (value) => value.length >  0})

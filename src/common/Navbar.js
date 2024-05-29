@@ -7,6 +7,7 @@ import { BsChevronDown } from 'react-icons/bs';
 import ProfileDropDown from '../components/core/Auth/ProfileDropDown';
 import MobileMenu from '../components/core/Auth/MobileMenu';
 import { NavbarLinks } from '../data/navbarlinks';
+import toast from 'react-hot-toast';
 
 export default function Navbar() {  
     const { token } = useSelector((state) => state.auth);
@@ -21,7 +22,7 @@ export default function Navbar() {
             const result = await apiConnector("GET", categories.CATEGORIES_API);
             setSubLinks(result.data.data);
         } catch (error) {
-            console.log("Could not fetch the category list");
+             toast.error("Failed to fetch Category")
         } finally {
             setLoading(false);
         }

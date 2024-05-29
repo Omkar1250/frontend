@@ -34,7 +34,7 @@ export const getAllPosts = async () => {
         }
         result= response?.data?.data
     } catch (error) {
-        console.log("GET_ALL_POST_API...ERROR.........", error)
+       
         toast.error(error.message)
     }
     toast.dismiss(toastId)
@@ -45,8 +45,8 @@ export const fetchPostCategories = async () => {
     let result = []
     try {
         const response = await apiConnector("GET", CATEGORIES_API)
-        console.log("Printing response from apis file............", response)
-        console.log("POST_CATEGORIES_API...RESPONE" ,response)
+       
+      
         if(!response?.data?.success){
             throw new Error("Could not fetch Categories")
 
@@ -54,7 +54,7 @@ export const fetchPostCategories = async () => {
         result = response?.data?.data
         
     } catch (error) {
-            console.log('POST_CATEGORY_API_ERROR....', error)
+         
             toast.error(error.message)        
     }          
     return result
@@ -68,14 +68,14 @@ export const addPostDetails = async (data, token) => {
             "Content-Type": "multipart/form-data",
             Authorization:`Bearer ${token}`
         })
-        console.log("CREATE COURSE API RESPONSE............", response)
+       
         if (!response?.data?.success) {
           throw new Error("Could Not Add Course Details")
         }
         toast.success("Course Details Added Successfully")
         result = response?.data?.data
       } catch (error) {
-        console.log("CREATE COURSE API ERROR............", error)
+        
         toast.error(error.message)
       }
       toast.dismiss(toastId)
@@ -95,14 +95,14 @@ export const getFullPostDetails = async(postId, token) =>{
     {
         Authorization: `Bearer ${token}`,
     } )
-    console.log("POST_FULL_DETAILS_API API RESPONSE............", response)
+  
 
     if (!response.data.success) {
       throw new Error(response.data.message)
     }
     result = response?.data?.data
   }catch(error) {
-    console.log("COURSE_FULL_DETAILS_API API ERROR............", error)
+  
     result = error.response.data
     // toast.error(error.response.data.message);
   }
@@ -121,14 +121,14 @@ export const editPostDetails = async(data, token)=>{
                 "Content-Type":"multipart/form-data",
                  Authorization: `Bearer ${token}`,
             })    
-            console.log("EDIT POST API RESPONSE.......", response)
+            
             if(!response?.data?.success){
                 throw new Error("Could not update post details")
             }
             toast.success("Poast updated successfully")
             result = response?.data?.data
     } catch (error) {
-        console.log("EDIT COURSE API ERROR............", error)
+        
         toast.error(error.message)
       }
       toast.dismiss(toastId)
@@ -142,14 +142,14 @@ export const deletePost = async(data, token)=> {
         const response = await apiConnector("DELETE", DELETE_POST_API, data, {
             Authorization: `Bearer ${token}`,
         })
-        console.log("DELETE_POST_API_RESPONSE", response)
+        
         if(!response?.data?.success) {
             throw new Error("Could Not Delete Post")
 
         }
         toast.success("Post Deleted")
     } catch (error) {
-        console.log("DELETE COURSE API ERROR............", error)
+       
         toast.error(error.message)
       }
       toast.dismiss(toastId)
@@ -164,7 +164,7 @@ export const categoryPageData = async (categoryId)=> {
         const response = await apiConnector("POST",  CATALOGPAGEDATA_API,
             {categoryId : categoryId,}
         );
-        console.log(" PRINTING CATEGORYPAGE DATA API RESPONSE", response)
+       
        
         if(!response?.data?.success)
             throw new Error("Could not Fetch Category page data");
@@ -173,7 +173,7 @@ export const categoryPageData = async (categoryId)=> {
 
   }
   catch(error) {
-    console.log("CATALOG PAGE DATA API ERROR....", error);
+  
    
     result = error.response?.data;
    
@@ -201,7 +201,7 @@ export const createComment = async (data, token) => {
         toast.success("Comment added successfully");
         result = response.data; // Ensure this returns the newly created comment data
     } catch (error) {
-        console.log("CREATE COMMENT API ERROR............", error);
+        
         toast.error("Please Login to add Comment");
     } finally {
         toast.dismiss(toastId);
