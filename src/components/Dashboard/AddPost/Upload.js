@@ -14,11 +14,11 @@ export default function Upload({
   viewData = null,
   editData = null,
 }) {
-  const { post } = useSelector((state) => state.post);
+ 
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewSource, setPreviewSource] = useState(viewData || editData || "");
 
-  const inputRef = useRef(null);
+
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];

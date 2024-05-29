@@ -3,7 +3,6 @@ import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { apiConnector } from '../services/apiConnector';
 import { categories } from '../services/apis';
-import { AiOutlineMenu } from "react-icons/ai";
 import { BsChevronDown } from 'react-icons/bs';
 import ProfileDropDown from '../components/core/Auth/ProfileDropDown';
 import MobileMenu from '../components/core/Auth/MobileMenu';
@@ -11,10 +10,7 @@ import { NavbarLinks } from '../data/navbarlinks';
 
 export default function Navbar() {  
     const { token } = useSelector((state) => state.auth);
-    const { user } = useSelector((state) => state.profile);
     const location = useLocation();
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     const [subLinks, setSubLinks] = useState([]);
     const [loading, setLoading] = useState(false);

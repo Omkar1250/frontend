@@ -7,14 +7,14 @@ import ConfirmationModal from '../../common/ConfirmationModal';
 import { VscSignOut } from 'react-icons/vsc';
 import { logout } from '../../services/operations/authAPI';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
-import {  BsBoxArrowLeft, BsBoxArrowRight } from 'react-icons/bs';
+
 
 export default function Sidebar() {
     const { user, loading: profileLoading } = useSelector((state) => state.profile);
     const { loading: authLoading } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [open, setOpen] = useState(false);
+    const [ setOpen] = useState(false);
     const ref = useRef(null);
     useOnClickOutside(ref, () => setOpen(false));
     const [confirmationModal, setConfirmationModal] = useState(null);

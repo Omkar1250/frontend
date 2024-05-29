@@ -11,7 +11,6 @@ import DOMPurify from 'dompurify';
 import { htmlToText } from 'html-to-text';
 
 export default function PostTable({ posts, setPosts }) {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const { token } = useSelector((state) => state.auth);
     const [loading, setLoading] = useState(false);

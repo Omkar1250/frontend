@@ -17,7 +17,7 @@ export default function PostInformationForm() {
   const { post, editPost } = useSelector((state) => state.post)
   const [loading, setLoading] = useState(false)
   const [postCategories, setPostCategories] = useState([])
-  const [postShortDesc, setPostShortDesc] = useState('')
+  const [postShortDesc] = useState('')
   const editor = useRef(null)
 
  

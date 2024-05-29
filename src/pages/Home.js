@@ -6,7 +6,6 @@ import CTAButton from '../components/core/Homepage/Button'
 import CodeBlock from '../components/core/Homepage/CodeBlock';
 import { TypeAnimation } from 'react-type-animation';
 import banner from '../assets/images/banner.avif'
-import bgWhite from '../assets/images/bghome.svg'
 import Contact from './Contact';
 
 export default function Home() {

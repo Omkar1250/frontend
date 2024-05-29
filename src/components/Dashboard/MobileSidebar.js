@@ -9,9 +9,7 @@ import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 export default function MobileSidebar() {
     const { user, loading: profileLoading } = useSelector((state) => state.profile);
     const { loading: authLoading } = useSelector((state) => state.auth);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const [open, setOpen] = useState(false);
+    const [ setOpen] = useState(false);
     const ref = useRef(null);
     useOnClickOutside(ref, () => setOpen(false));
     const [accordionOpen, setAccordionOpen] = useState(false);
