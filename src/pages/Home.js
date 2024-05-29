@@ -38,11 +38,14 @@ export default function Home() {
     At CodeSmasher, we are passionate about empowering programmers of all levels to smash through their coding challenges and achieve their development goals.
     </div>
   </div>
-  <div className='lg:w-1/2 lg:text-center '>
-    <img className='mx-auto lg:mx-0 object-cover' style={{ clipPath: 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%)' }} 
-     src={Banner} 
-     alt="Banner" />
-  </div>
+  <div className="lg:w-1/2 lg:text-center">
+      <img
+        className="mx-auto lg:mx-0 object-cover"
+        style={{ clipPath: 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
+        src={Banner}
+        alt="Banner"
+      />
+    </div>
 </div>
 
 
