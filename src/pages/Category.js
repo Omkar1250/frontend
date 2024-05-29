@@ -98,7 +98,7 @@ export default function Category() {
 
   return (
     <>
-      <div className='w-4/5 mx-auto'>
+      <div className='lg:w-4/5 mx-auto'>
         {/* Hero Section */}
         <div className='box-content bg-richblack-800 px-4'>
           <div className='mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent'>

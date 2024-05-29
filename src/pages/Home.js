@@ -39,7 +39,9 @@ export default function Home() {
     </div>
   </div>
   <div className='lg:w-1/2 lg:text-center '>
-    <img className='mx-auto lg:mx-0 object-cover' style={{ clipPath: 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%)' }}  src={Banner} alt="Banner" />
+    <img className='mx-auto lg:mx-0 object-cover' style={{ clipPath: 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%)' }} 
+     src={Banner} 
+     alt="Banner" />
   </div>
 </div>
 
