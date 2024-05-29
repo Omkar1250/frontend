@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link, matchPath, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { apiConnector } from '../services/apiConnector';
 import { categories } from '../services/apis';
 import { BsChevronDown } from 'react-icons/bs';
