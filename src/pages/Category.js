@@ -7,7 +7,7 @@ import Pagination from '../components/core/Pagination';
 import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import { htmlToText } from 'html-to-text';
-
+import Error from './Error';
 export default function Category() {
   const { catalogName } = useParams();
   const [catalogPageData, setCatalogPageData] = useState(null);

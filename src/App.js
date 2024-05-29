@@ -21,7 +21,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ViewPost from './pages/ViewPost';
 import Footer from './pages/Footer';
-
+import Error from './pages/Error';
 function App() {
  
   const {user} = useSelector((state)=> state.profile)
@@ -87,6 +87,7 @@ function App() {
         )
       }
       </Route>
+      <Route path="*" element={<Error />} />
 
       </Routes>
       <Footer/>
