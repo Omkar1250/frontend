@@ -21,6 +21,20 @@ export const sidebarLinks = [
     type: ACCOUNT_TYPE.ADMIN,
     icon: "VscAdd",
   },
+  {
+    id: 4,
+    name: "Add Category",
+    path: "/dashboard/add-category",
+    type: ACCOUNT_TYPE.ADMIN,
+    icon: "VscAdd",
+  },
+  {
+    id: 5,
+    name: "Registerd Users",
+    path: "/dashboard/all-user",
+    type: ACCOUNT_TYPE.ADMIN,
+    icon: "VscFeedback",
+  },
  
  
 ];

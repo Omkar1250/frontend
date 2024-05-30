@@ -10,11 +10,13 @@ export const endpoints = {
 // PROFILE ENDPOINTS
 export const profileEndpoints = {
     GET_USER_DETAILS_API: `${BASE_URL}/profile/getprofiledetails`,
+    GET_ALL_USERS_API: `${BASE_URL}/profile/getallusers`
 };
 
 // CATEGORIES API 
 export const categories = {
     CATEGORIES_API: `${BASE_URL}/post/showallcategory`,
+    CREATE_CATEGORY_API: `${BASE_URL}/post/createcategory`,
     CATALOGPAGEDATA_API: `${BASE_URL}/post/getcategorypagedetails`,
 };
 

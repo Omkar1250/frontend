@@ -39,7 +39,6 @@ export default function AddComment() {
                 toast.error("Failed to add comment");
             }
         } catch (error) {
-            console.error("Error adding comment:", error);
             toast.error("Error adding comment");
         } finally {
             setLoading(false);

@@ -16,7 +16,8 @@ const {
 
 const {
     CATEGORIES_API,
-    CATALOGPAGEDATA_API
+    CATALOGPAGEDATA_API,
+    CREATE_CATEGORY_API
 } = categories
 
 const {
@@ -203,6 +204,31 @@ export const createComment = async (data, token) => {
     } catch (error) {
         
         toast.error("Please Login to add Comment");
+    } finally {
+        toast.dismiss(toastId);
+    }
+
+    return result; // Return the result (comment data or null in case of an error)
+};
+
+
+export const createCategory = async (data, token) => {
+    let result = null;
+    const toastId = toast.loading("Loading")
+
+    try {
+        const response = await apiConnector("POST", CREATE_CATEGORY_API, data,{
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+        })
+        if(!response.data.success){
+            toast.error("Something went wrong!!")
+        }
+        
+        result = response.data
+    } catch (error) {
+        throw new Error("Something went wrong!! Please try again")
+        
     } finally {
         toast.dismiss(toastId);
     }

@@ -22,6 +22,8 @@ import Contact from './pages/Contact';
 import ViewPost from './pages/ViewPost';
 import Footer from './pages/Footer';
 import Error from './pages/Error';
+import CreateCategory from './components/Dashboard/Add Catalog/CreateCategory';
+import Users from './components/core/Auth/Users';
 function App() {
  
   const {user} = useSelector((state)=> state.profile)
@@ -78,7 +80,8 @@ function App() {
           <> 
            <Route path="dashboard/my-posts" element={<MyPosts />} />
            <Route path="dashboard/add-post" element={<AddPost />} />
-          {/* <Route path="dashboard/instructor" element={<Instructor />} /> */} 
+          <Route path="dashboard/add-category" element={<CreateCategory/>} /> 
+          <Route path="dashboard/all-user" element={<Users/>} /> 
            
          
           <Route path="dashboard/edit-post/:postId" element={<EditPost />} /> 
