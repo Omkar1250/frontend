@@ -37,7 +37,7 @@ export default function ViewPost() {
     }
 
     return (
-        <div className=" py-10 w-screen lg:w-4/5 px-2 mx-auto bg-richblack-800">
+        <div className=" py-10 w-screen p-2 lg:w-4/5 px-2 mx-auto bg-richblack-800">
             <div className=" p-2 border-1 shadow-md rounded-lg overflow-hidden  mt-4 text-richblack-25">
                 <h2 className="text-xl text-blue-200 font-semibold  mt-5 mb-4">{post?.title || 'Untitled Post'}</h2>
                 <div className="flex justify-between text-sm text-gray-500 mb-4">
