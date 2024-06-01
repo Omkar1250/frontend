@@ -81,7 +81,7 @@ export default function Post() {
       ) : (
         <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 overflow-hidden'>
           {currentPosts.map((post) => (
-            <div key={post._id} className='flex flex-col bg-richblack-700 border-0 shadow-md rounded-lg overflow-hidden'>
+            <div key={post._id} className='flex flex-col bg-richblack-800 border-0 shadow-md rounded-lg overflow-hidden'>
               <div className='h-56 overflow-hidden text-white shadow-md bg-clip-border rounded-xl bg-blue-50 shadow-blue-25'>
                 <img className='w-full h-full object-cover' src={post.thumbnail} alt={post.title} />
               </div>
