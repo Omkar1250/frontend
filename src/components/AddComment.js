@@ -55,7 +55,7 @@ export default function AddComment() {
                     <textarea
                         name="commentDesc"
                         id="commentDesc"
-                        className=' bg-richblack-800 rounded-md p-2'
+                        className=' bg-richblack-700 rounded-md p-2'
                         placeholder='Comment Description'
                         {...register('commentDesc', { required: true })}
                     
