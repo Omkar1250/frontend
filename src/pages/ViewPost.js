@@ -75,10 +75,10 @@ export default function ViewPost() {
                         <div className='flex  flex-col  max-w-[580px] lg:ml-52 mx-auto'>
                             {
                         comments.map((comment) => (
-                            <div key={comment?._id} className='bg-richblack-600 p-2 rounded-md shadow-md mb-4  gap-4 
+                            <div key={comment?._id} className='bg-richblack-700 p-2 rounded-md shadow-md mb-4  gap-4 
                             text-wrap  text-ellipsis overflow-hidden '>
                                 <div className=''>
-                                            <div className='flex justify-between bg-richblack-700 p-2 rounded-md'>
+                                            <div className='flex justify-between bg-richblack-600 p-2 rounded-md'>
                                                                   
                                                         <div className='flex items-center justify-center'>
                                                         <img
