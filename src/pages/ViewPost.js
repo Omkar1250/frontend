@@ -37,9 +37,9 @@ export default function ViewPost() {
     }
 
     return (
-        <div className=" py-10 w-screen p-2 lg:w-4/5 px-2 mx-auto bg-richblack-800">
-            <div className=" p-2 border-1 shadow-md rounded-lg overflow-hidden  mt-4 text-richblack-25">
-                <h2 className="text-xl text-blue-200 font-semibold  mt-5 mb-4">{post?.title || 'Untitled Post'}</h2>
+        <div className=" w-screen p-2 lg:w-4/5 bg-richblack-600   mx-auto">
+            <div className=" p-2 border-1 shadow-md  overflow-hidden bg-richblack-800 mt-12 text-richblack-25">
+                <h2 className="text-xl text-richblack-25 font-semibold  mt-5 mb-4">{post?.title || 'Untitled Post'}</h2>
                 <div className="flex justify-between text-sm text-gray-500 mb-4">
                     <span className=' bg-caribbeangreen-200 rounded-md border text-sm px-2 border-caribbeangreen-50'>Created at: {post?.createdAt ? new Date(post?.createdAt).toLocaleDateString() : 'Unknown date'}</span>
                     <span className='bg-caribbeangreen-200 rounded-md border text-sm px-2 border-caribbeangreen-50' >Category: {post?.category?.name || 'Uncategorized'}</span>
@@ -75,10 +75,10 @@ export default function ViewPost() {
                         <div className='flex  flex-col  max-w-[580px] lg:ml-52 mx-auto'>
                             {
                         comments.map((comment) => (
-                            <div key={comment?._id} className='bg-richblack-700 p-2 rounded-md shadow-md mb-4  gap-4 
+                            <div key={comment?._id} className='bg-richblack-900 p-2 rounded-md shadow-md mb-4  gap-4 
                             text-wrap  text-ellipsis overflow-hidden '>
                                 <div className=''>
-                                            <div className='flex justify-between bg-richblack-600 p-2 rounded-md'>
+                                            <div className='flex justify-between bg-richblack-800 p-2 rounded-md'>
                                                                   
                                                         <div className='flex items-center justify-center'>
                                                         <img

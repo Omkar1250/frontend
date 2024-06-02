@@ -81,17 +81,17 @@ export default function Post() {
       ) : (
         <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 overflow-hidden'>
           {currentPosts.map((post) => (
-            <div key={post._id} className='flex flex-col bg-richblack-700 border-0 shadow-md rounded-lg overflow-hidden'>
-              <div className='h-56 overflow-hidden text-white shadow-md bg-clip-border rounded-xl bg-blue-50 shadow-blue-25'>
+            <div key={post._id} className='flex flex-col bg-richblack-700 border- rounded-lg overflow-hidden'>
+              <div className='h-56 overflow-hidden p-1 text-white shadow-md bg-clip-border rounded-xl  '>
                 <img className='w-full h-full object-cover' src={post.thumbnail} alt={post.title} />
               </div>
-              <div className='flex flex-col p-2 flex-1 text-blue-200 font-medium'>
+              <div className='flex flex-col p-2 flex-1 text-richblack-25  font-medium'>
                 <Link to={`/post/${post._id}`}>
-                  <h5 className='text-lg font-semibold text-blue-200 mb-2 '>
+                  <h5 className='text-lg font-semibold text-richblack-25  mb-2 '>
                     {truncateText(post.title, TRUNCATE_TITLE_LENGTH)}
                   </h5>
                 </Link>
-                <p className='text-base text-richblack-25 flex-grow'>
+                <p className=' text-richblack-25  text-sm flex-grow'>
                   {truncateText(post.body, TRUNCATE_BODY_LENGTH)}
                 </p>
                 <div className='mt-4'>
