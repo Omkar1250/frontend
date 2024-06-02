@@ -16,8 +16,8 @@ export default function Category() {
   const [postsPerPage] = useState(6);
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(false);
-  const TRUNCATE_LENGTH = 30;
-
+  const TRUNCATE_BODY_LENGTH = 25;
+  const TRUNCATE_TITLE_LENGTH = 12;
   useEffect(() => {
     const getCategories = async () => {
       try {
@@ -69,11 +69,11 @@ export default function Category() {
   const nextPage = () => setCurrentPage((prev) => Math.min(prev + 1, Math.ceil(filteredPosts.length / postsPerPage)));
   const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
 
-  const truncateText = (htmlContent) => {
+  const truncateText = (htmlContent, length) => {
     const sanitizedContent = DOMPurify.sanitize(htmlContent);
     const plainText = htmlToText(sanitizedContent, { wordwrap: false });
-    return plainText.split(' ').length > TRUNCATE_LENGTH
-      ? plainText.split(' ').slice(0, TRUNCATE_LENGTH).join(' ') + '...'
+    return plainText.split(' ').length > length
+      ? plainText.split(' ').slice(0, length).join(' ') + '...'
       : plainText;
   };
 
@@ -100,7 +100,7 @@ export default function Category() {
     <>
       <div className='lg:w-4/5 mx-auto px-4'>
         {/* Hero Section */}
-        <div className='box-content bg-richblack-800 px-4'>
+        <div className='box-content bg-richblack-700 px-4 mt-8'>
           <div className='mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent'>
             <p className='text-sm text-richblack-300'>
               {`Home / Catalog / `}
@@ -132,19 +132,19 @@ export default function Category() {
         ) : (
           <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {currentPosts.map((post) => (
-              <div key={post._id} className='flex flex-col bg-richblack-700 border-0 shadow-md rounded-lg overflow-hidden'>
-                <div className='h-56 overflow-hidden text-white shadow-md bg-clip-border rounded-xl bg-blue-50 shadow-blue-25'>
+              <div key={post._id} className='flex flex-col rounded-md border-[1px] border-richblack-600 overflow-hidden'>
+                <div className='h-56 overflow-hidden text-white shadow-md bg-clip-border rounded-md'>
                   <img className='w-full h-full object-cover' src={post.thumbnail} alt={post.title} />
                 </div>
-                <div className='flex flex-col p-2 flex-1 text-blue-200 font-medium'>
+                <div className='flex flex-col p-2 flex-1 text-richblack-25  font-medium'>
                  <Link to={`/post/${post?._id}`}>
-                 <h5 className='text-lg font-semibold text-blue-200 mb-2'>
-                    {post.title}
+                 <h5 className='text-lg font-semibold text-richblack-25  mb-2 '>
+                 {truncateText(post.title, TRUNCATE_TITLE_LENGTH)}
                   </h5>
                  
                  </Link>
-                  <p className='text-base text-richblack-25 flex-grow'>
-                    {truncateText(post.body)}
+                  <p className='text-richblack-25  text-sm flex-grow'>
+                  {truncateText(post.body, TRUNCATE_BODY_LENGTH)}
                   </p>
                   <span>
                     <p className='text-xs text-blue-100 underline'>Category: {catalogPageData.data.selectedCategory.name}</p>
