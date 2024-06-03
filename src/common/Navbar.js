@@ -27,7 +27,7 @@ export default function Navbar() {
             setLoading(false);
         }
     };
-    console.log(subLinks, "----------------sdfdsfffffffff")
+
 
     useEffect(() => {  
         fetchSubLinks();
